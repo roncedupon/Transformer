@@ -9,7 +9,9 @@ master 分支暂时没啥用。
 
 # Spianl部分
 ## Spinal_V1 写layernorm的
-## Spinal_V2 写计算模块的，比如img2col
+## Spinal_V2 写计算模块的第一个缓存模块，img2col
+## Spinal_V3 用来写计算模块的第二个缓存模块:Weight_Cache,权重缓存
+
 
 # Matlab部分
 ## Matlab分支包含matlab生成仿真测试txt，还有c++的gold ref
