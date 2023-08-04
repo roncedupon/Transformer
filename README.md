@@ -1,21 +1,57 @@
 # 每个分支是干啥的？
-master 分支暂时没啥用。
-一共有三条开发路线，分别是：transformer 量化（Quan），transformer硬件实现（Spinal），matlab测试数据生成（Matlab）
-目前卢浩的代码也集成进来了，Spinal_Main部分的代码都是已经仿真和上板验证过的
+master 分支包含了说明文档，就是本README文件。<br>
+一共有三条开发路线，分别是：
+<br>transformer 量化（Quan）
+<br>transformer硬件实现（Spinal）
+<br>matlab测试数据生成（Matlab）
+<br>目前卢浩的代码也集成进来了，Spinal_Main部分的代码都是已经仿真和上板验证过的
+***
+# 算法量化部分
+## <font color=Red> Quan_Main</font>
+稳定的量化主分支,只要改一下数据集的路径量化就能跑通量化代码
+给师弟和其他人的代码都走Quan_Main分支
+## Quan_V6
+打算自己训练一个Vit模型，然后再用FQ-VIT去量化
 
-# Quan量化部分
-## Quan_Main 稳定的量化主分支
-## Quan_V6 可以用FQ-Vit做训练，训练完后再用FQ-Vit量化（最新分支)
-## Quan_V5 用来测试Softmax
+**目前进度：**<br>
+可以自定义自己的vit模型，训练类目前只有3个类<br>
+拿到自己训练的模型后可以进行量化并查看精度损失。
+
+## Quan_V5 
+用来测试Softmax
 ## Quan_V4 用来测试layernorm
+2022年用来测试layernorm的代码
 ## Quan_JQ 用来在集群上测试
-## 其他的Quan，没啥用
+## 其他的Quan分支，没啥用
+***
 
-# Spianl部分（只需要关注Spinal_Main分支）
-## Spinal_V1 写layernorm的（已经失效）
-## Spinal_V2 写计算模块的第一个缓存模块，img2col（已经失效）
-## Spinal_V3 用来写计算模块的第二个缓存模块:Weight_Cache,权重缓存(最新分支)
-## Spinal_Main 是稳定的分支，目前好像实现了8*8阵列的卷积+矩阵+卷积+矩阵量化
 
+
+# 硬件设计部分（需要关注Spinal_Main分支
+## <font color=Red> Spinal_Main 是稳定的分支</font>
+目前实现了8*8阵列的卷积+矩阵+卷积+矩阵量化<br>
+Spinal_Main分支的所有内容均已上板验证过了，具体看提交记录。）
+## ~~Spinal_V1~~
+ 写layernorm的（已经失效）
+## ~~Spinal_V2~~
+ 写计算模块的第一个缓存模块，img2col（已经失效）
+## Spinal_V3 
+用来写计算模块的第二个缓存模块:Weight_Cache,权重缓存(最新分支)
+
+目前正在做三维脉动阵列的设计与实现
+
+
+***
 # Matlab部分
-## Matlab分支包含matlab生成仿真测试txt，还有c++的gold ref
+## Matlab_Main
+<font size=4 color=Red>**matlab的main分支包含matlab生成仿真测试txt**</font>
+<br>matlab分支中包含了完整的测试路线
+主要分七步：
+<br>Step1:配置好卷积核大小，图片大小，步长等必要信息，
+<br>可以一键生成随机图片,随机权重
+<br>Step2:根据Step1生成的.mat文件生成仿真指令和上板测试指令
+<br>Step3:生成Img2Col数据排列模块的输入数据，用于与仿真数据进行逐字节对比
+<br>Step4:生成卷积的标准输出数据，用于与脉动阵列的输出进行逐字节对比
+<br>Step5:生成上板测试的bin文件，同时输出expected的上板计算后的数据bin文件
+<br>Step6:在板子上跑完后，导出脉动阵列的输出数据可以进行逐字节对比
+<br>Step7:矩阵乘法的测试
