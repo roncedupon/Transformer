@@ -1,15 +1,15 @@
 # 每个分支是干啥的？
-master 分支包含了说明文档，就是本README文件。<br>
-一共有三条开发路线，分别是：
+master 分支包含了说明文档，就是本README文件。
+<br>一共有三条开发路线，分别是：
 <br>transformer 量化（Quan）
 <br>transformer硬件实现（Spinal）
 <br>matlab测试数据生成（Matlab）
-<br>目前卢浩的代码也集成进来了，Spinal_Main部分的代码都是已经仿真和上板验证过的
+<br>Spinal_Main部分的代码都是已经仿真和上板验证过的
 ***
 # 算法量化部分
 ## <font color=Red> Quan_Main</font>
-稳定的量化主分支,只要改一下数据集的路径量化就能跑通量化代码
-给师弟和其他人的代码都走Quan_Main分支
+<br>稳定的量化主分支,只要改一下数据集的路径量化就能跑通量化代码
+<br>给师弟和其他人的代码都走Quan_Main分支
 ## Quan_V6
 打算自己训练一个Vit模型，然后再用FQ-VIT去量化
 
@@ -27,7 +27,7 @@ master 分支包含了说明文档，就是本README文件。<br>
 
 
 
-# 硬件设计部分（需要关注Spinal_Main分支
+# 硬件设计部分（需要关注Spinal_Main分支）
 ## <font color=Red> Spinal_Main 是稳定的分支</font>
 目前实现了8*8阵列的卷积+矩阵+卷积+矩阵量化<br>
 Spinal_Main分支的所有内容均已上板验证过了，具体看提交记录。）
