@@ -1,5 +1,7 @@
 # 三维脉动阵列整体架构（一直在修改完善）
 ![Alt text](%E6%95%B4%E4%BD%93%E6%9E%B6%E6%9E%84.png)
+![Alt text](<Fig. 8. CNN mapped to matrix multiplication..png>)
+![Alt text](%E5%BE%AA%E7%8E%AF%E5%B1%95%E5%BC%80.png)
 <br>【数据排列（img2Col+GEMM）】将卷积映射成脉动阵列上的矩阵乘法，可以支持3*3~16*16，步长1~KernelSize尺度的卷积，
 <br>一共有两种模式：直接模式（用于GEMM）和Switch模式（用于卷积）
 <br>
