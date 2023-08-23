@@ -1,10 +1,18 @@
 # 三维脉动阵列整体架构（一直在修改完善）
 ![Alt text](%E6%95%B4%E4%BD%93%E6%9E%B6%E6%9E%84.png)
-![Alt text](<Dataflow of switch-mod..png>)
-![Alt text](<A 3-D weight tensor is flatten along the channel dimension..png>)
-![Alt text](<Fig. 8. CNN mapped to matrix multiplication..png>)
-![Alt text](%E5%BE%AA%E7%8E%AF%E5%B1%95%E5%BC%80.png)
+<center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图1.整体架构</center>
 
+![Alt text](<Dataflow of switch-mod..png>)
+<center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图2.Switch模式的数据流</center>
+
+![Alt text](<A 3-D weight tensor is flatten along the channel dimension..png>)
+<center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图3.3维权重Tensor展平</center>
+
+![Alt text](<Fig. 8. CNN mapped to matrix multiplication..png>)
+<center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图4.卷积映射成矩阵乘法</center>
+
+![Alt text](%E5%BE%AA%E7%8E%AF%E5%B1%95%E5%BC%80.png)
+<center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图5.卷积循环展开（2卷积核并行）</center>
 
 <br>【数据排列（img2Col+GEMM）】将卷积映射成脉动阵列上的矩阵乘法，可以支持3*3~16*16，步长1~KernelSize尺度的卷积，
 <br>一共有两种模式：直接模式（用于GEMM）和Switch模式（用于卷积）
