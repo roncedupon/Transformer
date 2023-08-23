@@ -7,9 +7,7 @@
 
 ![Alt text](<Dataflow of switch-mod..png>)
 
-<center style="font-size:18px;color:#C0C0C0;text-decoration:underline">图3.3维权重Tensor展平</center>
 
-![Alt text](<A 3-D weight tensor is flatten along the channel dimension..png>)
 
 <center style="font-size:18px;color:#C0C0C0;text-decoration:underline">图4.卷积映射成矩阵乘法</center>
 
