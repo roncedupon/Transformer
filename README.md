@@ -1,19 +1,19 @@
 # 三维脉动阵列整体架构（一直在修改完善）
-<center style="font-size:18px;color:#C0C0C0;text-decoration:underline">图1.整体架构</center>
+<!-- <center style="font-size:18px;color:#C0C0C0;text-decoration:underline">图1.整体架构</center> -->
 
 ![Alt text](%E6%95%B4%E4%BD%93%E6%9E%B6%E6%9E%84.png)
 
-<center style="font-size:18px;color:#C0C0C0;text-decoration:underline">图2.Switch模式的数据流</center>
+<!-- <center style="font-size:18px;color:#C0C0C0;text-decoration:underline">图2.Switch模式的数据流</center> -->
 
 ![Alt text](<Dataflow of switch-mod..png>)
 
-
-
-<center style="font-size:18px;color:#C0C0C0;text-decoration:underline">图4.卷积映射成矩阵乘法</center>
-
+<!-- <center style="font-size:18px;color:#C0C0C0;text-decoration:underline">图4.卷积映射成矩阵乘法</center> -->
 ![Alt text](<Fig. 8. CNN mapped to matrix multiplication..png>)
 
-<center style="font-size:18px;color:#C0C0C0;text-decoration:underline">图5.卷积循环展开（2卷积核并行）</center>
+<!-- <center style="font-size:18px;color:#C0C0C0;text-decoration:underline">图5.卷积循环展开（2卷积核并行）</center> -->
+![Alt text](<Fig. 10. Multiple sliding windows are extended in order along the column dimension to realize parallel computation of multiple sliding Windows on the systolic array..png>)
+
+![Alt text](<The sliding windows are eventually flattened into a submatrix of in matrix A.png>)
 
 ![Alt text](%E5%BE%AA%E7%8E%AF%E5%B1%95%E5%BC%80.png)
 
